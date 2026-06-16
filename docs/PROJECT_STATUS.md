@@ -71,4 +71,4 @@ None currently.
 
 ## Current Git Checkpoint
 
-8f8c7a2 — Add FastAPI backend skeleton and health endpoint
+56f42ad — Add PostgreSQL database dependencies
