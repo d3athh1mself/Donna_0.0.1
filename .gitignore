@@ -1,0 +1,45 @@
+﻿# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage.xml
+htmlcov/
+
+# Node.js / React
+node_modules/
+dist/
+build/
+coverage/
+*.log
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local application storage
+storage/documents/
+storage/temp/
+storage/exports/
+storage/backups/
+
+# Database files and backups
+*.sql
+*.dump
+*.backup
+
+# Temporary files
+*.tmp
+*.temp
