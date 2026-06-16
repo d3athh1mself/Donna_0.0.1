@@ -71,4 +71,4 @@ None currently.
 
 ## Current Git Checkpoint
 
-b744f14 — Initialize Denali Craft operations platform structure
+8f8c7a2 — Add FastAPI backend skeleton and health endpoint
