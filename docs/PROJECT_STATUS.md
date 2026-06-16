@@ -71,4 +71,4 @@ None currently.
 
 ## Current Git Checkpoint
 
-46844ff — Configure database connection and Alembic migrations
+625fbf9 — Add Codex project instructions and models package
