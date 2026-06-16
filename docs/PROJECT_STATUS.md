@@ -71,4 +71,4 @@ None currently.
 
 ## Current Git Checkpoint
 
-56f42ad — Add PostgreSQL database dependencies
+46844ff — Configure database connection and Alembic migrations
