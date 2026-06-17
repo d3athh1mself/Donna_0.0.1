@@ -71,4 +71,4 @@ None currently.
 
 ## Current Git Checkpoint
 
-625fbf9 — Add Codex project instructions and models package
+fea1d3d — Add database constraint naming convention
