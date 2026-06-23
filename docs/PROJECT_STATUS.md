@@ -11,28 +11,42 @@
 - .gitignore created
 - Environment-variable template created
 - Material catalog schema design completed and consistency-reviewed in `docs/MATERIAL_CATALOG_SCHEMA.md`
+- First material catalog/supplier implementation slice completed:
+  - Created SQLAlchemy models for `material_categories`, `manufacturers`, `brands`, `units_of_measure`, `products`, `product_variants`, `suppliers`, and `supplier_product_listings`.
+  - Wired `app.models` into Alembic autogeneration through `backend/alembic/env.py`.
+  - Created first Alembic migration: `da757d56fbd8_create_initial_catalog_supplier_tables.py`.
+  - Applied migration `da757d56fbd8` to local PostgreSQL.
+  - Verified all expected tables exist.
+  - Verified Alembic version is `da757d56fbd8`.
+  - Ran downgrade to base and upgrade back to head successfully.
+  - Re-verified all expected tables after downgrade/upgrade.
 
 ## Current Milestone
 
-Material catalog implementation planning
+Reviewed unit-of-measure seed approach planning. Do not seed data until the seed list and method are approved.
+
+## Current Database Migration State
+
+- `da757d56fbd8 (head)` — create initial catalog supplier tables
 
 ## Remaining Milestones
 
-- Create local storage structure
-- Create project documentation
-- Create backend project
-- Configure PostgreSQL database
-- Plan material-catalog SQLAlchemy models and first Alembic migration
-- Create frontend project
+- Create reviewed unit-of-measure seed approach
+- Build frontend project
 - Build material catalog MVP
-- Add receipt uploads
+- Build receipt upload workflow
+- Build human review workflow for receipt extraction
 - Add price history
 - Add reporting and exports
 - Add OCR and AI-assisted extraction
+- Verify backup workflow before real receipt entry
 
 ## Known Issues
 
 - Receipt entry is not ready.
+- Sample receipt testing is not ready.
+- Real receipt entry is not ready.
+- Receipt tables, receipt upload workflow, human review workflow, and backup verification are not implemented yet.
 - Sample receipts must wait until the required catalog, supplier, receipt, review, storage, migration, duplicate-detection, and backup workflows exist.
 
 ## Deferred Features
@@ -62,7 +76,9 @@ Material catalog implementation planning
 - Exports will be designed with QuickBooks compatibility in mind
 - Storage paths will be configurable for redeployment
 - Backup architecture will support external destinations
-- Material catalog schema design is complete as a planning document only; no SQLAlchemy catalog models, seed scripts, Alembic migrations, or database tables have been created from it.
+- Material catalog schema design is complete as a planning document.
+- The first approved catalog/supplier model and migration slice is implemented and verified locally.
+- Unit-of-measure seed data has not been created or loaded.
 - No unresolved material-catalog schema decisions remain.
 - Material catalog categories support unlimited nesting, with three levels initially displayed in the MVP UI.
 - Product variants do not require a Denali-created SKU.
@@ -75,7 +91,6 @@ Material catalog implementation planning
 - Document records use relative local-storage keys under a configured storage root.
 - Inactive records are hidden by default.
 - Accounting export mappings and staging remain QuickBooks-neutral.
-- After this documentation milestone is verified, committed, and pushed, start a new Codex conversation for implementation planning.
 
 ## Pending Decisions
 

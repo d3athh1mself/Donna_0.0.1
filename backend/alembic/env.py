@@ -3,6 +3,7 @@
 from alembic import context
 from sqlalchemy import pool
 
+import app.models  # noqa: F401
 from app.db.base import Base
 from app.db.session import database_url, engine
 
