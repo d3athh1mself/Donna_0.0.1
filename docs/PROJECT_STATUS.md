@@ -52,6 +52,7 @@ Approved unit-of-measure seed script implemented and dry-run/default mode verifi
 ## Deferred Features
 
 - Live QuickBooks integration
+- Database-backed company/profile settings with admin editing
 - Job management
 - Full job costing
 - Cloud storage
@@ -91,6 +92,17 @@ Approved unit-of-measure seed script implemented and dry-run/default mode verifi
 - Document records use relative local-storage keys under a configured storage root.
 - Inactive records are hidden by default.
 - Accounting export mappings and staging remain QuickBooks-neutral.
+- Donna must not permanently hard-code `Denali Craft LLC` throughout the app. Early MVP may use app configuration for company display name, but later UI, reports, exports, documents, and headings should read company/profile branding from editable settings.
+
+## Future Company/Profile Settings
+
+- App name: `Donna`
+- Legal company name example: `Denali Craft LLC`
+- Display name example: `Denali Craft`
+- Trade name / DBA: optional
+- Early MVP can use app configuration for the company display name.
+- Later, company/profile settings should be stored in the database and editable through an admin/settings screen.
+- Future fields may include `legal_name`, `display_name`, `dba_name`, address fields, `phone`, `email`, `logo_file_path`, `timezone`, `is_active`, `created_at`, and `updated_at`.
 
 ## Pending Decisions
 
