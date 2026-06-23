@@ -169,7 +169,7 @@ Approved MVP seed set:
 | --- | --- | --- | --- |
 | Count | Each | EA | Count unit. |
 | Count | Piece | PC | Count unit. |
-| Count | Pair | PR | Count unit. |
+| Count | Pair | PR | 2 each. |
 | Count | Set | SET | Count unit. |
 | Count | Dozen | DOZ | 12 each. |
 | Count | Hundred | HUN | 100 each. |
@@ -237,7 +237,20 @@ Approved MVP seed set:
 | Metric weight | Kilogram | KG | Metric weight. |
 | Metric weight | Metric Tonne | TONNE | 1,000 kilograms; distinct from US Short Ton. |
 
-Units remain user-manageable so authorized users can add or deactivate units after MVP launch. Convertible physical units may use unit_type, base_unit_id, and conversion_factor_to_base metadata. Packaging and material-form units such as Box, Bag, Roll, and Pallet must not receive universal conversions because quantities depend on the specific supplier listing or product. Product-specific package quantities and purchase-unit relationships should remain on supplier_product_listings or other appropriate product-specific records.
+Approved seed loading approach:
+
+- Unit seed rows will be loaded by a standalone, idempotent backend seed script. Alembic remains for schema changes only, not unit seed rows.
+- The seed script must match existing records by stable unit code and may insert missing default units.
+- The seed script must not overwrite user-edited names, active flags, or other user-managed fields unless explicitly approved.
+- Required seed row fields are code, name, unit_type, and is_active. Optional seed row fields are base_unit_code and conversion_factor_to_base.
+- Units remain user-manageable so authorized users can add, edit, deactivate, or reactivate units after MVP launch through a later admin UI.
+
+Conversion safety rules:
+
+- Safe fixed conversions are allowed for physical units and fixed-count units. Approved fixed-count conversions include Dozen = 12 Each, Hundred = 100 Each, Thousand = 1,000 Each, and Pair = 2 Each.
+- Approved construction-specific fixed conversions are Roofing Square = 100 Square Feet and Board Foot = 144 Cubic Inches.
+- Packaging and material-form units such as Pack, Box, Carton, Case, Bundle, Pallet, Bag, Roll, Spool, Coil, Tube, Cartridge, Can, Pail, Bucket, Bottle, Jar, Drum, Sheet, Panel, Board, Stick, Length, and Lot must not receive universal conversions because quantities depend on the specific supplier listing or product.
+- Product-specific package quantities and purchase-unit relationships should remain on supplier_product_listings or other appropriate product-specific records, not on global unit definitions.
 
 ### product_dimension_sets
 

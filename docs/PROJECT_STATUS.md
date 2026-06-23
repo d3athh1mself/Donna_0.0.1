@@ -23,7 +23,7 @@
 
 ## Current Milestone
 
-Reviewed unit-of-measure seed approach planning. Do not seed data until the seed list and method are approved.
+Reviewed unit-of-measure seed approach approved. Unit seed data has not been created or loaded.
 
 ## Current Database Migration State
 
@@ -31,7 +31,7 @@ Reviewed unit-of-measure seed approach planning. Do not seed data until the seed
 
 ## Remaining Milestones
 
-- Create reviewed unit-of-measure seed approach
+- Implement approved unit-of-measure seed script
 - Build frontend project
 - Build material catalog MVP
 - Build receipt upload workflow
@@ -78,7 +78,7 @@ Reviewed unit-of-measure seed approach planning. Do not seed data until the seed
 - Backup architecture will support external destinations
 - Material catalog schema design is complete as a planning document.
 - The first approved catalog/supplier model and migration slice is implemented and verified locally.
-- Unit-of-measure seed data has not been created or loaded.
+- Unit-of-measure seed approach is reviewed and approved. Seed data has not been created or loaded.
 - No unresolved material-catalog schema decisions remain.
 - Material catalog categories support unlimited nesting, with three levels initially displayed in the MVP UI.
 - Product variants do not require a Denali-created SKU.
