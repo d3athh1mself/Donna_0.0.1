@@ -1,0 +1,55 @@
+.app-shell {
+  min-height: 100vh;
+  padding: 48px;
+}
+
+.app-header {
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 28px;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.status-pill {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.workspace-panel {
+  margin-top: 40px;
+  max-width: 720px;
+}
+
+.workspace-panel p:last-child {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 620px;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 28px 20px;
+  }
+
+  .app-header {
+    flex-direction: column;
+  }
+}

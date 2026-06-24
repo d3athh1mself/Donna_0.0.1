@@ -25,10 +25,18 @@
   - Verified key conversions: `PR = 2 EA`, `ROOF_SQ = 100 SQFT`, and `BF = 144 CUIN`.
   - Verified selected packaging/material-form units have no universal conversions.
   - Verified post-apply dry-run idempotency: 0 rows would be inserted and 69 existing rows were detected.
+- Frontend project setup completed:
+  - Created Vite + React + TypeScript frontend scaffold under `frontend`.
+  - Selected npm as the frontend package manager.
+  - Configured Vite development proxy so `/api/health` maps to the FastAPI `/health` endpoint.
+  - Added safe public-only frontend environment example at `frontend/.env.example`.
+  - Added a minimal Donna internal app shell.
+  - Verified `npm run lint`, `npm run typecheck`, and `npm run build` pass.
+  - No material catalog, receipt, OCR, QuickBooks, reporting, or company profile screens have been implemented yet.
 
 ## Current Milestone
 
-Approved unit-of-measure seed data has been applied and verified. The next milestone is frontend project setup.
+Frontend project setup is complete and verified. The next milestone should remain a small frontend/backend integration verification or frontend foundation refinement, not receipt entry.
 
 ## Current Database Migration State
 
@@ -36,7 +44,8 @@ Approved unit-of-measure seed data has been applied and verified. The next miles
 
 ## Remaining Milestones
 
-- Build frontend project
+- Verify frontend/backend health-check integration through the Vite development proxy
+- Refine frontend foundation as needed before building MVP catalog screens
 - Build material catalog MVP
 - Build receipt upload workflow
 - Build human review workflow for receipt extraction
@@ -118,4 +127,4 @@ Approved unit-of-measure seed data has been applied and verified. The next miles
 
 ## Latest Completed Implementation Checkpoint
 
-053ed0b — Implement initial catalog supplier models and migration
+0750d20 — Record applied unit of measure seed data
