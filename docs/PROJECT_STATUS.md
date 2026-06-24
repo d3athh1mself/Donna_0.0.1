@@ -33,10 +33,17 @@
   - Added a minimal Donna internal app shell.
   - Verified `npm run lint`, `npm run typecheck`, and `npm run build` pass.
   - No material catalog, receipt, OCR, QuickBooks, reporting, or company profile screens have been implemented yet.
+- Frontend/backend runtime verification completed:
+  - Direct FastAPI `/health` check passed with `status: ok`.
+  - Vite frontend development server started successfully.
+  - Browser loaded the Donna app shell successfully.
+  - Vite `/api/health` proxy reached the FastAPI `/health` endpoint and returned `status: ok`.
+  - Both runtime servers were stopped after verification.
+  - No material catalog, receipt, OCR, QuickBooks, reporting, or company profile screens have been implemented yet.
 
 ## Current Milestone
 
-Frontend project setup is complete and verified. The next milestone should remain a small frontend/backend integration verification or frontend foundation refinement, not receipt entry.
+Frontend project setup and runtime health-check proxy verification are complete. The next milestone should remain a small frontend foundation or API integration refinement task, not receipt entry.
 
 ## Current Database Migration State
 
@@ -44,7 +51,6 @@ Frontend project setup is complete and verified. The next milestone should remai
 
 ## Remaining Milestones
 
-- Verify frontend/backend health-check integration through the Vite development proxy
 - Refine frontend foundation as needed before building MVP catalog screens
 - Build material catalog MVP
 - Build receipt upload workflow
