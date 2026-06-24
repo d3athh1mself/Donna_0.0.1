@@ -20,10 +20,15 @@
   - Verified Alembic version is `da757d56fbd8`.
   - Ran downgrade to base and upgrade back to head successfully.
   - Re-verified all expected tables after downgrade/upgrade.
+- Approved unit-of-measure seed data applied to local PostgreSQL:
+  - 69 UOM rows exist.
+  - Verified key conversions: `PR = 2 EA`, `ROOF_SQ = 100 SQFT`, and `BF = 144 CUIN`.
+  - Verified selected packaging/material-form units have no universal conversions.
+  - Verified post-apply dry-run idempotency: 0 rows would be inserted and 69 existing rows were detected.
 
 ## Current Milestone
 
-Approved unit-of-measure seed script implemented and dry-run/default mode verified. Unit seed data has not been loaded.
+Approved unit-of-measure seed data has been applied and verified. The next milestone is frontend project setup.
 
 ## Current Database Migration State
 
@@ -31,7 +36,6 @@ Approved unit-of-measure seed script implemented and dry-run/default mode verifi
 
 ## Remaining Milestones
 
-- Review and explicitly apply unit-of-measure seed data
 - Build frontend project
 - Build material catalog MVP
 - Build receipt upload workflow
@@ -79,7 +83,7 @@ Approved unit-of-measure seed script implemented and dry-run/default mode verifi
 - Backup architecture will support external destinations
 - Material catalog schema design is complete as a planning document.
 - The first approved catalog/supplier model and migration slice is implemented and verified locally.
-- Unit-of-measure seed approach is reviewed and approved. The standalone seed script is implemented and dry-run/default mode is verified. Seed data has not been loaded.
+- Unit-of-measure seed approach is reviewed and approved. The standalone seed script is implemented, applied locally, and verified idempotent after apply.
 - No unresolved material-catalog schema decisions remain.
 - Material catalog categories support unlimited nesting, with three levels initially displayed in the MVP UI.
 - Product variants do not require a Denali-created SKU.
