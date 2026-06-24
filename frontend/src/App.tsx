@@ -1,6 +1,39 @@
+import { useEffect, useState } from 'react'
 import './App.css'
+import { getHealthStatus } from './api/health'
+
+type BackendHealth = 'checking' | 'ok' | 'unavailable'
 
 function App() {
+  const [backendHealth, setBackendHealth] = useState<BackendHealth>('checking')
+
+  useEffect(() => {
+    let isCurrent = true
+
+    getHealthStatus()
+      .then(() => {
+        if (isCurrent) {
+          setBackendHealth('ok')
+        }
+      })
+      .catch(() => {
+        if (isCurrent) {
+          setBackendHealth('unavailable')
+        }
+      })
+
+    return () => {
+      isCurrent = false
+    }
+  }, [])
+
+  const backendHealthLabel =
+    backendHealth === 'ok'
+      ? 'Backend ok'
+      : backendHealth === 'unavailable'
+        ? 'Backend unavailable'
+        : 'Backend checking'
+
   return (
     <main className="app-shell">
       <header className="app-header" aria-label="Donna application header">
@@ -8,7 +41,9 @@ function App() {
           <p className="eyebrow">Denali Craft Operations Platform</p>
           <h1>Donna</h1>
         </div>
-        <span className="status-pill">Frontend setup</span>
+        <span className={`status-pill status-pill--${backendHealth}`}>
+          {backendHealthLabel}
+        </span>
       </header>
 
       <section className="workspace-panel" aria-labelledby="workspace-title">

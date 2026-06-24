@@ -32,6 +32,20 @@
   white-space: nowrap;
 }
 
+.status-pill--checking {
+  color: var(--muted);
+}
+
+.status-pill--ok {
+  border-color: #9abe8c;
+  color: #2f6b2f;
+}
+
+.status-pill--unavailable {
+  border-color: #d9a08f;
+  color: #9a3f2f;
+}
+
 .workspace-panel {
   margin-top: 40px;
   max-width: 720px;

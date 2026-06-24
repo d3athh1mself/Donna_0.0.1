@@ -40,10 +40,20 @@
   - Vite `/api/health` proxy reached the FastAPI `/health` endpoint and returned `status: ok`.
   - Both runtime servers were stopped after verification.
   - No material catalog, receipt, OCR, QuickBooks, reporting, or company profile screens have been implemented yet.
+- Frontend foundation/API integration refinement completed:
+  - Added a minimal frontend API helper under `frontend/src/api/` for safe public API calls.
+  - Added a health API function for `/api/health`.
+  - Updated the Donna app shell to display backend health status: checking, ok, or unavailable.
+  - Verified `npm run lint`, `npm run typecheck`, and `npm run build` pass.
+  - Runtime verification passed with backend running at `http://127.0.0.1:8000` and frontend running at `http://localhost:5173/`.
+  - Browser loaded the Donna app shell successfully.
+  - Status pill showed `Backend ok`.
+  - `/api/health` returned `{"status":"ok"}`.
+  - Receipt, OCR, QuickBooks, reporting, material catalog frontend screens, and company profile implementation have not been started yet.
 
 ## Current Milestone
 
-Frontend project setup and runtime health-check proxy verification are complete. The next milestone should remain a small frontend foundation or API integration refinement task, not receipt entry.
+Frontend foundation/API integration refinement is complete. The next milestone should remain a small frontend foundation follow-up or the first tiny material-catalog planning slice; receipt, OCR, QuickBooks, reporting, and company profile implementation should remain out of scope.
 
 ## Current Database Migration State
 
@@ -52,12 +62,14 @@ Frontend project setup and runtime health-check proxy verification are complete.
 ## Remaining Milestones
 
 - Refine frontend foundation as needed before building MVP catalog screens
-- Build material catalog MVP
+- Build material catalog MVP frontend screens
 - Build receipt upload workflow
 - Build human review workflow for receipt extraction
 - Add price history
 - Add reporting and exports
 - Add OCR and AI-assisted extraction
+- Add QuickBooks-aware export implementation
+- Add database-backed company/profile settings
 - Verify backup workflow before real receipt entry
 
 ## Known Issues
@@ -66,6 +78,8 @@ Frontend project setup and runtime health-check proxy verification are complete.
 - Sample receipt testing is not ready.
 - Real receipt entry is not ready.
 - Receipt tables, receipt upload workflow, human review workflow, and backup verification are not implemented yet.
+- Material catalog frontend screens are not implemented yet.
+- OCR, QuickBooks, reporting, and company profile implementation have not been started yet.
 - Sample receipts must wait until the required catalog, supplier, receipt, review, storage, migration, duplicate-detection, and backup workflows exist.
 
 ## Deferred Features
@@ -133,4 +147,5 @@ Frontend project setup and runtime health-check proxy verification are complete.
 
 ## Latest Completed Implementation Checkpoint
 
-0750d20 — Record applied unit of measure seed data
+- Previous committed checkpoint: `2f71b7e` — Record frontend runtime verification.
+- Current implementation checkpoint: frontend API health status refinement.
