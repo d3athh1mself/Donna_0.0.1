@@ -1,6 +1,6 @@
 ﻿# Donna — Denali Craft Operations Platform
 
-Donna is the internal company database and operations platform for Denali Craft LLC.
+Donna is the internal company database and operations platform 
 
 This is an internal system, not a customer portal.
 
